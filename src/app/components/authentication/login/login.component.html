@@ -1,0 +1,38 @@
+<div class="auth-bg">
+  <div class="auth">
+    <div class="img-logo">
+      <h2>
+        player
+      </h2>
+
+    </div>
+    <p class="intro-message"></p>
+    <p>
+      <span class="server-error" *ngIf="serverError"> {{serverError}}</span>
+    </p>
+    <form [formGroup]="loginForm" novalidate>
+      <div class="form-group">
+        <input type="text" formControlName="username" class="validation-error-input" placeholder="username">
+        <span *ngIf="loginForm.controls.username.invalid && loginForm.controls.username.touched">
+          <span class="validation-error" *ngIf="loginForm.controls.username.hasError('required')">user name
+            required</span>
+
+        </span>
+      </div>
+      <div class="form-group">
+        <input type="password" formControlName="password" placeholder="password">
+        <span *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+          <span class="validation-error" *ngIf="loginForm.controls.password.hasError('required')">password required</span>
+
+        </span>
+      </div>
+
+      <div class="btn-group-vertical">
+
+        <button class="btn btn-login" (click)="loginSubmit()">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <button routerLink="add" class="btn btn-primary">Add player</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Attributes</th>
+        <th scope="col">Levels</th>
+        <th scope="col">Last Seen On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players"  >
+        <th scope="row" style="cursor: pointer;" [routerLink]="['edit/' + player.playerId]" >{{player.playerId}}</th>
+        <th scope="row">{{player.firstName}}</th>
+        <th scope="row">{{player.email}}</th>
+        <th scope="row">{{player.gender}}</th>
+        <th scope="row">
+          <p *ngFor="let attribute of player.attributes">{{attribute.name}} : {{attribute.value}}</p>
+        </th>
+        <th scope="row">{{player.levels ? player.levels : 0 }}</th>
+        <th scope="row">{{player.lastSeenOn | date : 'short' }}</th>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="player-form">
+    <h3>Add player</h3>
+    <form [formGroup]="playerForm" novalidate>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label>firstName  </label>
+            <input type="text" formControlName="firstName" class="validation-error-input" placeholder="firstName">
+            <span *ngIf="playerForm.controls.firstName.invalid && playerForm.controls.firstName.touched">
+              <span class="validation-error" *ngIf="playerForm.controls.firstName.hasError('required')">firstName
+                required</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label>lastName</label>
+            <input type="text" formControlName="lastName" class="validation-error-input" placeholder="lastName">
+            <span *ngIf="playerForm.controls.lastName.invalid && playerForm.controls.lastName.touched">
+              <span class="validation-error" *ngIf="playerForm.controls.lastName.hasError('required')">lastName
+                required</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label>email </label>
+            <input type="text" formControlName="email" class="validation-error-input" placeholder="email">
+            <span *ngIf="playerForm.controls.email.invalid && playerForm.controls.email.touched">
+              <span class="validation-error" *ngIf="playerForm.controls.email.hasError('required')">email
+                required</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label>birthDate </label>
+            <input type="date" formControlName="birthDate" class="validation-error-input" placeholder="birthDate">
+            <span *ngIf="playerForm.controls.birthDate.invalid && playerForm.controls.birthDate.touched">
+              <span class="validation-error" *ngIf="playerForm.controls.birthDate.hasError('required')">birthDate
+                required</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label>gender</label>
+              <select formControlName="gender" class="form-control">
+                <option value="" selected hidden>select gender
+                </option>
+                <option value="Male">Male
+                </option>
+                <option value="Female">Female
+                </option>
+              </select>
+
+            <span *ngIf="playerForm.controls.gender.invalid && playerForm.controls.gender.touched">
+              <span class="validation-error" *ngIf="playerForm.controls.gender.hasError('required')">gender
+                required</span>
+            </span>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" (click)="saveData()">Save</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUserLogin:' http://tgplatform.westeurope.cloudapp.azure.com/',
+  api:' http://tgplatform.westeurope.cloudapp.azure.com/api/v1/',
 };
+
