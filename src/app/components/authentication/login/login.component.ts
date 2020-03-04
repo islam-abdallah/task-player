@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   const data = JSON.parse(localStorage.getItem('user_player'))
-    console.log(data.organizations[data.organizationId].packages)
-    this.loginForm = this.formBuilder.group({
+  this.loginForm = this.formBuilder.group({
       username: [
         "",
         Validators.compose([Validators.required])
